@@ -1,0 +1,30 @@
+
+To automate any program execution in UNIX/LINUX crontab is used.
+The crontab is used to run any task/command/script at any interval. This command is highly configurable and can be used to run task at <mm> minutes of <hh> hour of <dom> day of month of month <mon> or at <dow> day pf week.
+
+** Assuming : Script 7.sh has executable right
+
+Q1. Find a way to run the script everyday at 12:01 AM or 0001 hrs.
+
+Sol: So to execute the script at everyday at 0001 hrs. an entry in the file opened using crontab -e should be made as
+
+		1 0 * * *	<path of script>
+
+	For example : 1 0 * * *	/home/devilo/scripts/7.sh
+
+	1 -> first minute
+	0 -> 0th hr i.e. 00 hr
+	* * * -> every day i.e. other parameter doesnot matter
+
+Q2. Find a way to run the script every monday and generate a log for accesses made on sundays.
+
+Sol: So to execute the script at everyday at 0001 hrs. an entry in the file opened using crontab -e should be made as
+
+		1 0 * * 1	<path of script>
+
+	For example : 1 0 * * 1	/home/devilo/scripts/7.sh
+
+	1 -> first minute
+	0 -> 0th hr i.e. 00 hr
+	* * -> other parameter doesnot matter
+	1 -> every monday i.e. 1st day of every week
